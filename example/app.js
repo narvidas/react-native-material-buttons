@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { AppRegistry, Text, ScrollView, View, SafeAreaView } from 'react-native';
-import { TextButton, RaisedTextButton } from 'react-native-material-buttons';
+import React, {Component} from 'react';
+import {AppRegistry, Text, ScrollView, View, SafeAreaView} from 'react-native';
+import {TextButton, RaisedTextButton} from 'react-native-material-buttons';
 
 let styles = {
   scroll: {
@@ -40,7 +40,7 @@ let styles = {
     justifyContent: 'space-between',
     shadowOpacity: 0.54,
     shadowRadius: 1,
-    shadowOffset: { width: 0, height: 1 },
+    shadowOffset: {width: 0, height: 1},
     elevation: 1,
   },
 
@@ -72,8 +72,11 @@ let styles = {
 };
 
 /* eslint-disable react/prop-types */
-let Strong = ({ children, ...props }) =>
-  <Text style={styles.bold} {...props}>{children}</Text>
+let Strong = ({children, ...props}) => (
+  <Text style={styles.bold} {...props}>
+    {children}
+  </Text>
+);
 /* eslint-enable */
 
 export default function init() {
@@ -85,37 +88,94 @@ export default function init() {
             <View style={styles.card}>
               <View style={styles.content}>
                 <Text style={styles.display}>default</Text>
-                <Text style={styles.text}>Buttons with default props, raised or flat, enabled or <Strong>disabled</Strong></Text>
+                <Text style={styles.text}>
+                  Buttons with default props, raised or flat, enabled or{' '}
+                  <Strong>disabled</Strong>
+                </Text>
               </View>
 
-              <RaisedTextButton style={{ marginVertical: 4 }} title="default button" />
-              <RaisedTextButton style={{ marginVertical: 4 }} title="disabled button" disabled />
-              <TextButton style={{ marginVertical: 4 }} title="default flat button" />
-              <TextButton style={{ marginVertical: 4 }} title="disabled flat button" disabled />
+              <RaisedTextButton
+                style={{marginVertical: 4}}
+                title="default button"
+              />
+              <TextIconButton title="button with icon" icon="whatsapp" />
+              <RaisedTextButton
+                style={{marginVertical: 4}}
+                title="disabled button"
+                disabled
+              />
+              <TextButton
+                style={{marginVertical: 4}}
+                title="default flat button"
+              />
+              <TextButton
+                style={{marginVertical: 4}}
+                title="disabled flat button"
+                disabled
+              />
             </View>
 
             <View style={styles.card}>
               <View style={styles.content}>
                 <Text style={styles.display}>raised</Text>
-                <Text style={styles.text}>Buttons with custom <Strong>color</Strong>, <Strong>titleColor</Strong>, increased <Strong>rippleDuration</Strong> and <Strong>rippleOpacity</Strong></Text>
+                <Text style={styles.text}>
+                  Buttons with custom <Strong>color</Strong>,{' '}
+                  <Strong>titleColor</Strong>, increased{' '}
+                  <Strong>rippleDuration</Strong> and{' '}
+                  <Strong>rippleOpacity</Strong>
+                </Text>
               </View>
 
-              <View style={{ flexDirection: 'row', justifyContent: 'flex-end' }}>
-                <RaisedTextButton style={styles.button} rippleDuration={600} rippleOpacity={0.54} title='flat'   color='#039BE5' titleColor='white' />
-                <RaisedTextButton style={styles.button} rippleDuration={600} rippleOpacity={0.54} title='is'     color='#0288D1' titleColor='white' />
-                <RaisedTextButton style={styles.button} rippleDuration={600} rippleOpacity={0.54} title='boring' color='#0277BD' titleColor='white' />
+              <View style={{flexDirection: 'row', justifyContent: 'flex-end'}}>
+                <RaisedTextButton
+                  style={styles.button}
+                  rippleDuration={600}
+                  rippleOpacity={0.54}
+                  title="flat"
+                  color="#039BE5"
+                  titleColor="white"
+                />
+                <RaisedTextButton
+                  style={styles.button}
+                  rippleDuration={600}
+                  rippleOpacity={0.54}
+                  title="is"
+                  color="#0288D1"
+                  titleColor="white"
+                />
+                <RaisedTextButton
+                  style={styles.button}
+                  rippleDuration={600}
+                  rippleOpacity={0.54}
+                  title="boring"
+                  color="#0277BD"
+                  titleColor="white"
+                />
               </View>
             </View>
 
             <View style={styles.card}>
               <View style={styles.content}>
                 <Text style={styles.display}>flat</Text>
-                <Text style={styles.text}>Buttons with custom <Strong>titleColor</Strong> and <Strong>color</Strong></Text>
+                <Text style={styles.text}>
+                  Buttons with custom <Strong>titleColor</Strong> and{' '}
+                  <Strong>color</Strong>
+                </Text>
               </View>
 
-              <View style={{ flexDirection: 'row', justifyContent: 'flex-start' }}>
-                <TextButton style={{ margin: 4, marginLeft: 0 }} titleColor='#00796B' title='decline' />
-                <TextButton style={{ margin: 4 }} titleColor='#00695C' color='rgba(0, 0, 0, .05)' title='accept' />
+              <View
+                style={{flexDirection: 'row', justifyContent: 'flex-start'}}>
+                <TextButton
+                  style={{margin: 4, marginLeft: 0}}
+                  titleColor="#00796B"
+                  title="decline"
+                />
+                <TextButton
+                  style={{margin: 4}}
+                  titleColor="#00695C"
+                  color="rgba(0, 0, 0, .05)"
+                  title="accept"
+                />
               </View>
             </View>
           </ScrollView>
